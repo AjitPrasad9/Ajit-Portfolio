@@ -19,6 +19,8 @@ body {
   font-family: "Poppins";
 }
 * {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   margin: 0;
   padding: 0;
   outline: none;
@@ -58,10 +60,14 @@ ul {
 }
 @keyframes slideSection {
   0% {
-    transform: translateY(100%);
+    /* transform: translateY(100%); */
+    transform: translateX(-100%);
+    transition: ease-in-out;
   }
   100% {
-    transform: translateY(0%);
+    /* transform: translateY(0%); */
+    transform: translateX(0%);
+    transition: ease-in-out;
   }
 }
 .hidden {
@@ -586,7 +592,7 @@ h3.my-profession {
   color: var(--text-black-900);
   text-align: center;
   font-size: 15px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 .contact .contact-info-item {
   flex: 0 0 25%;
@@ -690,6 +696,16 @@ h3.my-profession {
     max-width: 100%;
   }
   .home .home-img {
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    /* display: none; */
+  }
+  .home-img::before,
+  .home-img::after {
     display: none;
   }
 }
@@ -705,12 +721,32 @@ h3.my-profession {
     flex: 0 0 100%;
     max-width: 100%;
   }
+  /* h3.hello, */
+  h3.hello span {
+    font-size: 25px;
+  }
+  /* h3.hello, */
+  /* h3.hello span, */
+  h3.my-profession,
+  .home-info p {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .home-info p {
+    font-size: 15px;
+    font-weight: 300;
+  }
 }
+/* @media (max-width: 767px) {
+  * {
+    font-size: 1px;
+  }
+} */
 
 .centerr {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
   margin-bottom: 20px;
 }
 .mybtnn {
@@ -723,4 +759,9 @@ h3.my-profession {
 .scl:hover {
   transition: ease-in-out 0.3s;
   transform: scale(1.1);
+}
+hr {
+  /* color: #15151500; */
+
+  border: 1px solid var(--bg-black-50);
 }
