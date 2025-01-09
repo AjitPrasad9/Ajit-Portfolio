@@ -135,6 +135,20 @@ function closePhotox() {
     lightbox.style.display = 'none';
 }
 
+function openPhotoy(photoElement) {
+    const imgSrc = photoElement.querySelector('img').src;
+    const lightbox = document.getElementById('lightboxy');
+    const lightboxImg = document.getElementById('lightbox-imgy');
+
+    lightboxImg.src = imgSrc;
+    lightbox.style.display = 'flex';
+}
+
+function closePhotoy() {
+    const lightbox = document.getElementById('lightboxy');
+    lightbox.style.display = 'none';
+}
+
 
 $(".card-toggle").on("click", function () {
 
